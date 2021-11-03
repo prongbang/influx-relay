@@ -1,7 +1,5 @@
 # HA (High-Availability) InfluxDB
 
-![img.png](img.png)
-
 ## Start InfluxDB 1
 
 ```shell
