@@ -1,0 +1,14 @@
+FROM golang:alpine
+
+ENV GO111MODULE=on
+
+RUN go get -u github.com/influxdata/influxdb-relay
+
+RUN mkdir -p /go/src/github.com/prongbang/relay
+WORKDIR /go/src/github.com/prongbang/relay
+
+COPY . .
+
+EXPOSE 9096
+
+CMD ["/influxdb-relay", "-config", "relay-1.toml"]

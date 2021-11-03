@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  influx_relay1:
+    image: bitnami/influxdb-relay:latest
+    networks:
+      - influx-network
+    expose:
+      - "9096"
+    command: /influxdb-relay --config /relay.toml
+    volumes:
+      - "./relay-1.toml:/relay.toml:ro"
+
+  influx_relay2:
+    image: bitnami/influxdb-relay:latest
+    networks:
+      - influx-network
+    expose:
+      - "9096"
+    command: /influxdb-relay --config /relay.toml
+    volumes:
+      - "./relay-2.toml:/relay.toml:ro"
+
+networks:
+  influx-network:
+    external: true

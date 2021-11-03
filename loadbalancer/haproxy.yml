@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  haproxy:
+    image: appcelerator/haproxy-proxy
+    environment:
+      - BACKEND_influxdb_a=
+
+#  docker -e BACKEND_influxdb_a=influxdb-a:8086 -e BACKEND_influxdb_b=influxdb-b:8086 \
+#    -e RELAY_influxdb_a=influxdb-relay-a:9096 -e RELAY_influxdb_b=influxdb-relay-b:9096 \
+#    run appcelerator/haproxy-proxy

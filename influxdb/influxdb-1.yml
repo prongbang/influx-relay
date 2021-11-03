@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  influxdb1:
+    image: influxdb:1.8-alpine
+    networks:
+      - influx-network
+    volumes:
+      - ./influx1/data:/root/influxdb/data
+    ports:
+      - "8086:8086"
+      - "8089:8089"
+    environment:
+      TZ: "Asia/Bangkok"
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_ORG: innotechdev
+      DOCKER_INFLUXDB_INIT_BUCKET: innotechdev-bucket
+      DOCKER_INFLUXDB_INIT_USERNAME: innotechdev
+      DOCKER_INFLUXDB_INIT_PASSWORD: 55b8755c-d0df-456c-a2a8-5fd6b896ee8e
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: c747ea0f-b7ae-45f5-aa4c-14453065bb5f
+
+networks:
+  influx-network:
+    external: true

@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  loadbalancer:
+    build: .
+    networks:
+      - influx-network
+    ports:
+      - "7076:7076"
+
+networks:
+  influx-network:
+    external: true
