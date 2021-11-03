@@ -12,6 +12,9 @@ services:
       - "8090:8089"
     environment:
       TZ: "Asia/Bangkok"
+      INFLUXDB_DB: influxRelayDb
+      INFLUXDB_ADMIN_USER: innotechdev
+      INFLUXDB_ADMIN_PASSWORD: 55b8755c-d0df-456c-a2a8-5fd6b896ee8e
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_ORG: innotechdev
       DOCKER_INFLUXDB_INIT_BUCKET: innotechdev-bucket

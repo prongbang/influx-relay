@@ -11,7 +11,7 @@ bind-addr = "influx_relay2:9096"
 # timeout: Go-parseable time duration. Fail writes if incomplete in this time.
 # skip-tls-verification: skip verification for HTTPS location. WARNING: it's insecure. Don't use in production.
 output = [
-    { name="local-influx2", location = "http://influxdb2:8087/write", timeout="10s"  },
+    { name="local-influx2", location = "http://influxdb2:8086/write", timeout="10s"  },
     { name="remote-influx1", location = "http://influxdb1:8086/write", timeout="10s"  },
 ]
 
